@@ -23,6 +23,12 @@ if('encode'==$task){
     }
 }
 
+if('decode'==$task){
+    $data = $_POST['data']??'';
+    if($data != ''){
+        $scramblerData = decodeData($data,$key);
+    }
+}
 
 
 ?>
@@ -53,7 +59,7 @@ if('encode'==$task){
                     <a href="index.php?task=encode" class="btn btn-sm btn-outline-warning">Encode</a>
                     <a href="index.php?task=decode" class="btn btn-sm btn-outline-primary">Decode</a>
                     <a href="index.php?task=key" class="btn btn-sm btn-outline-danger">Genarate Key</a>
-                    <form method="post" action="index.php">
+                    <form method="post" action="index.php<?php if('decode'==$task){echo"?task=decode";}?>">
                         <div class="form-group">
                             <label for="key">Key</label>
                             <input type="text" class="form-control" id="key" name ="key" <?php displayKey($key);?> >
