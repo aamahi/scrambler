@@ -15,6 +15,14 @@ if("key"==$task){
     $key = $_POST['key'];
 }
 
+$scramblerData = '';
+if('encode'==$task){
+    $data = $_POST['data']??'';
+    if($data != ''){
+        $scramblerData = scramblerData($data,$key);
+    }
+}
+
 
 
 ?>
@@ -52,11 +60,11 @@ if("key"==$task){
                         </div>
                         <div class="form-group">
                             <label for="data">Data</label>
-                            <input type="text" class="form-control" id="data" name ="data">
+                            <input type="text" class="form-control" id="data" name ="data" value="<?php if(isset($_POST['data'])){echo $_POST['data'];}?>">
                         </div>
                         <div class="form-group">
                             <label for="result">Result</label>
-                            <input type="text" class="form-control" id="result" name ="result">
+                            <textarea class="form-control" name="result" id="result" cols="10" ><?=$scramblerData;?></textarea>
                         </div>
                        
                         <button type="submit" class="btn btn-primary">Do it</button>
