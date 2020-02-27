@@ -10,5 +10,3 @@ This is a Normal Scrabler project useing PHP7.
 ### Decode
 
 <img src="image/decode.png">
-
-### Add User Page
