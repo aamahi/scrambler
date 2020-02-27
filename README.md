@@ -1,35 +1,14 @@
-# Frist Crud Application Usin Laravel
-This is a Normal Crud Application useing Laravel. There only Add User and Read User and Edit or Delete User information
-
-
-## Customer functions
-
-Customer has many access. Such as,
-* Create Profile
-* Read Profile
-* Update profile
-* Change profile information
-* Delete Profile
-
-* And many more....
-
-### Demo
-
-Link: Disable Now.
+# Data Scrabler simple project useing only PHP
+This is a Normal Scrabler project useing PHP7. 
 
 # Some screenshoot of the project
 
-### Home page
+### Encode Data
 
-<img src="crud1/READme/home.png">
+<img src="image/encode.png">
 
-### Edit User Page
+### Decode
 
-<img src="crud1/READme/edit.png">
+<img src="image/decode.png">
 
 ### Add User Page
-
-<img src="crud1/READme/add.png">
-
-### Update Profile Page
-<img src="">
