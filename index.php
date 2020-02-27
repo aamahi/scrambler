@@ -1,3 +1,24 @@
+<?php
+
+include("function.php");
+
+$task ='encode';
+if(isset($_GET['task']) && $_GET['task']!=''){
+    $task =$_GET['task'];
+}
+$key = "abcdefghijklmnopqrstuvwzyz0123456789";
+if("key"==$task){
+    $key_original = str_split($key);
+    shuffle($key_original);
+    $key = join('',$key_original);
+}elseif(isset($_POST['key']) && $_POST['key'] !=''){
+    $key = $_POST['key'];
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +42,13 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <a href="" class="btn btn-sm btn-outline-warning">Encode</a>
-                    <a href="" class="btn btn-sm btn-outline-primary">Decode</a>
-                    <a href="" class="btn btn-sm btn-outline-danger">Genarate kye</a>
-                    <form>
+                    <a href="index.php?task=encode" class="btn btn-sm btn-outline-warning">Encode</a>
+                    <a href="index.php?task=decode" class="btn btn-sm btn-outline-primary">Decode</a>
+                    <a href="index.php?task=key" class="btn btn-sm btn-outline-danger">Genarate Key</a>
+                    <form method="post" action="index.php">
                         <div class="form-group">
                             <label for="key">Key</label>
-                            <input type="text" class="form-control" id="key" name ="key">
+                            <input type="text" class="form-control" id="key" name ="key" <?php displayKey($key);?> >
                         </div>
                         <div class="form-group">
                             <label for="data">Data</label>
@@ -38,7 +59,7 @@
                             <input type="text" class="form-control" id="result" name ="result">
                         </div>
                        
-                        <button type="submit" class="btn btn-primary">Try Again</button>
+                        <button type="submit" class="btn btn-primary">Do it</button>
                     </form>
                 </div>
                 
